@@ -1,19 +1,13 @@
-from .tracker import track_growth, Tracker
+from .tracker import track_growth
 
 from matplotlib import pyplot as plt
 
-def plot_growth(f, ns, tracker=None):
-    if tracker is None:
-        tracker = Tracker()
-
-    x, y = track_growth(f, ns, tracker)
+def plot_growth(f, ns):
+    x, y = track_growth(f, ns)
     plt.plot(x, y, label=f.__name__)
 
 
-def compare_growth(fs, ns, tracker=None):
-    if tracker is None:
-        tracker = Tracker()
-
+def compare_growth(fs, ns):
     for f in fs:
-        plot_growth(f, ns, tracker)
+        plot_growth(f, ns)
     plt.legend(loc="upper left")

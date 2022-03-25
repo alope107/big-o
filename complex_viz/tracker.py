@@ -6,7 +6,8 @@ class Tracker:
     def reset(self):
         self.count = 0
 
-def track_growth(f, ns, tracker):
+def track_growth(f, ns):
+    tracker = Tracker()
     counts = []
     for n in ns:
         tracker.reset()
