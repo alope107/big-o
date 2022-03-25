@@ -10,6 +10,6 @@ def track_growth(f, ns, tracker):
     counts = []
     for n in ns:
         tracker.reset()
-        f(n)
+        f(n, tracker=tracker)
         counts.append(tracker.count)
     return ns, counts
